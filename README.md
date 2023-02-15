@@ -48,13 +48,9 @@ MeloVerse is an online music library application that allows users to search and
 7. Admin adds, archives, or modifies a music track as desired
 8. Admin manages user comments as desired
 
-## tables 
+## Diagrams 
 
-Users Table
-Column Name	Data Type	Key
-user_id	int	PK
-username	varchar
-password	varchar
+![Use Case Diagram For The MaloVerse-Lib](https://user-images.githubusercontent.com/86893073/219063617-88686ac7-d100-44f2-8c18-f980b20901c5.svg)
 
 
 
