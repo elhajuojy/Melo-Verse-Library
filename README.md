@@ -25,7 +25,7 @@ MeloVerse is an online music library application that allows users to search and
 
 - Laravel framework
 - Blade templating engine
-- Bootstrap CSS framework
+- Tailwind CSS framework
 - APIs (optional) and AJAX (optional) to enhance user experience
 
 ## Bonus Features
@@ -52,6 +52,7 @@ MeloVerse is an online music library application that allows users to search and
 
 ![Use Case Diagram For The MaloVerse-Lib](https://user-images.githubusercontent.com/86893073/219063617-88686ac7-d100-44f2-8c18-f980b20901c5.svg)
 
+![gleek-2iYJwzSIEMnVU8jtg9m87g (1)](https://user-images.githubusercontent.com/86893073/219086798-faa52cc1-f475-41b6-87ab-a85def4885dd.png)
 
 
 ## Installation
