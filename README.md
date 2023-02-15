@@ -19,6 +19,8 @@ MeloVerse is an online music library application that allows users to search and
 - An artist is defined by their image, name, country, and date of birth.
 - A band is defined by its name, image, members, country, and date of formation.
 
+
+
 ## Technologies
 
 - Laravel framework
@@ -33,6 +35,8 @@ MeloVerse is an online music library application that allows users to search and
 - Monthly music track ranking
 - Option to receive notifications for newly added music tracks
 
+
+
 ## User Flow
 
 1. User logs in to their account
@@ -43,6 +47,16 @@ MeloVerse is an online music library application that allows users to search and
 6. Admin logs in to their account
 7. Admin adds, archives, or modifies a music track as desired
 8. Admin manages user comments as desired
+
+## tables 
+
+Users Table
+Column Name	Data Type	Key
+user_id	int	PK
+username	varchar
+password	varchar
+
+
 
 ## Installation
 
