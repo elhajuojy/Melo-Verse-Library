@@ -48,6 +48,15 @@ MeloVerse is an online music library application that allows users to search and
 7. Admin adds, archives, or modifies a music track as desired
 8. Admin manages user comments as desired
 
+![admin flow chart](https://raw.githubusercontent.com/elhajuojy/Melo-Verse-Library/09e5c103ed1bde5d5ae5e8e369d741c9b9e250dd/connecption/flowChart/glowGuru%20flowchart%20Admin.svg)
+
+
+![client flow chart](https://raw.githubusercontent.com/elhajuojy/Melo-Verse-Library/09e5c103ed1bde5d5ae5e8e369d741c9b9e250dd/connecption/flowChart/glowGuru%20flowchart%20Client.svg)
+
+
+![client flow chart](https://raw.githubusercontent.com/elhajuojy/Melo-Verse-Library/09e5c103ed1bde5d5ae5e8e369d741c9b9e250dd/connecption/flowChart/glowGuru%20flowchart%20Guest.svg)
+
+
 ## Diagrams 
 
 ![Use Case Diagram For The MaloVerse-Lib](https://user-images.githubusercontent.com/86893073/219063617-88686ac7-d100-44f2-8c18-f980b20901c5.svg)
