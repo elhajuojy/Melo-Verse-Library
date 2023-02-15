@@ -13,7 +13,7 @@ MeloVerse is an online music library application that allows users to search and
 - Admin can add, archive, and modify music tracks
 - Admin can manage user comments
 
-## Entities
+## Entities . 
 
 - A music track is defined by its cover image, title, artist(s) or group(s), writer(s), language(s), release date, lyrics, and duration.
 - An artist is defined by their image, name, country, and date of birth.
