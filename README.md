@@ -52,7 +52,8 @@ MeloVerse is an online music library application that allows users to search and
 
 ![Use Case Diagram For The MaloVerse-Lib](https://user-images.githubusercontent.com/86893073/219063617-88686ac7-d100-44f2-8c18-f980b20901c5.svg)
 
-![gleek-2iYJwzSIEMnVU8jtg9m87g (1)](https://user-images.githubusercontent.com/86893073/219086798-faa52cc1-f475-41b6-87ab-a85def4885dd.png)
+![Class Diagram ](https://user-images.githubusercontent.com/86893073/219109677-ca185b13-7693-4702-8a6e-df423948b235.png)
+
 
 
 ## Installation
