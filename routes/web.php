@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Playlist;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,4 +21,20 @@ Route::get('/', function () {
 
 Route::get("/login",function (){
     return "Login here ";
+});
+
+
+Route::get("/playlist/{playlist}",function (Playlist $playlist){
+
+    return view("playlist",[
+        "songs"=>$playlist->songs
+    ]);
+
+});
+
+
+
+Route::get("/1",function (){
+    $playlist  = Playlist::find(1);
+    dd($playlist->song[0]->title);
 });

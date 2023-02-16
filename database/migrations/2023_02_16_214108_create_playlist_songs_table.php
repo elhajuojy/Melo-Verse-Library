@@ -13,9 +13,13 @@ return new class extends Migration
     {
         Schema::create('playlist_songs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("song_id");
-            $table->foreignId("playlist_id");
+            $table->unsignedBigInteger('playlist_id');
+            $table->unsignedBigInteger('song_id');
             $table->timestamps();
+
+
+            $table->foreign('playlist_id')->references('id')->on('playlists')->onDelete('cascade');
+            $table->foreign('song_id')->references('id')->on('songs')->onDelete('cascade');
         });
     }
 

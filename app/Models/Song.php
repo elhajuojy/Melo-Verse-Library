@@ -10,8 +10,8 @@ class Song extends Model
 
     protected $guarded = [];
 
-    public function playlists()
+    public function playlist()
     {
-        return $this->belongsToMany(Playlist::class);
+        return $this->belongsToMany(Playlist::class,"playlist_songs");
     }
 }

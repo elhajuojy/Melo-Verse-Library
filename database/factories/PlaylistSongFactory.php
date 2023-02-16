@@ -24,4 +24,6 @@ class PlaylistSongFactory extends Factory
             "playlist_id"=>Playlist::factory()
         ];
     }
+
+    
 }
