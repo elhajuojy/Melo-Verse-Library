@@ -14,4 +14,12 @@ class Song extends Model
     {
         return $this->belongsToMany(Playlist::class,"playlist_songs");
     }
+
+    public  function rates(){
+        return $this->hasMany(Rate::class);
+    }
+
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
 }

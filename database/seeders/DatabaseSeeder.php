@@ -6,6 +6,7 @@ namespace Database\Seeders;
 
 use App\Models\Comment;
 use App\Models\PlaylistSong;
+use App\Models\Rate;
 use App\Models\Song;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -27,6 +28,9 @@ class DatabaseSeeder extends Seeder
         Comment::factory(3)->create([
             'user_id' => User::find(1),
             'song_id' => Song::find(1),
+        ]);
+
+        Rate::factory(6)->create([
         ]);
     }
 }
