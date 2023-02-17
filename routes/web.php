@@ -1,6 +1,8 @@
 <?php
 
 use App\Models\Playlist;
+use App\Models\Song;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,3 +36,17 @@ Route::get("/playlist/{playlist}",function (Playlist $playlist){
 });
 
 
+
+Route::get("/songs/{song}",function (Song $song){
+//    return (string)$song->comments;
+    return (string)$song->rates;
+});
+
+//get songs for user playlist
+Route::get("/users/{user}",function (User $user){
+
+    $songs = Playlist::find($user->playlists->toArray()[0]["id"]);
+
+    return (string)$songs->songs;
+
+});
