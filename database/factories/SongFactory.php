@@ -24,7 +24,7 @@ class SongFactory extends Factory
             'audio_path' => $this->faker->url(),
             'filename' => $this->faker->word() . '.mp3',
             'duration' => $this->faker->time('i:s'),
-            'lyrics' => $this->faker->paragraph(3),
+            'lyrics' => $this->faker->paragraph(1),
             'cover' => $this->faker->imageUrl(),
         ];
     }
