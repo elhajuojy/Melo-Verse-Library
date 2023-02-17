@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Album;
 use App\Models\Comment;
 use App\Models\PlaylistSong;
 use App\Models\Rate;

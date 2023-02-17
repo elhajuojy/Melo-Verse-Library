@@ -19,9 +19,13 @@ return new class extends Migration
             $table->string("audio_path");
             $table->string("filename");
             $table->time("duration");
+            $table->unsignedBigInteger("album_id");
             $table->string("lyrics");
             $table->string("cover");
             $table->timestamps();
+
+            $table->foreign('album_id')->references('id')->on('albums');
+
 
 
         });
