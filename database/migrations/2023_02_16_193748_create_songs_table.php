@@ -20,11 +20,13 @@ return new class extends Migration
             $table->string("filename");
             $table->time("duration");
             $table->unsignedBigInteger("album_id");
+            $table->unsignedBigInteger("artist_id");
             $table->string("lyrics");
             $table->string("cover");
             $table->timestamps();
 
             $table->foreign('album_id')->references('id')->on('albums');
+            $table->foreign('artist_id')->references('id')->on('artists');
 
 
 

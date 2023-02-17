@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Album;
+use App\Models\Artist;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -27,7 +28,8 @@ class SongFactory extends Factory
             'duration' => $this->faker->time('i:s'),
             'lyrics' => $this->faker->paragraph(1),
             'cover' => $this->faker->imageUrl(),
-            "album_id"=>Album::factory()
+            "album_id"=>Album::factory(),
+            "artist_id"=>Artist::factory()
         ];
     }
 }
