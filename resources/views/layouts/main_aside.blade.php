@@ -15,7 +15,16 @@
             </div>
 
         </a>
-       <a href="#">
+        <a href="#">
+
+            <div class="home flex gap-6">
+                <i class="fa-solid fa-send-backward"></i>
+                <p>Your Library</p>
+            </div>
+
+        </a>
+
+       <a href="#" class="mt-8">
            <div class="home flex gap-6">
                <i class="fa-solid fa-square-heart"></i>
                <p>Liked Songs</p>
