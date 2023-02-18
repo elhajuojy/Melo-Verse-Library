@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.playlist::-webkit-scrollbar {
+    width: 0px;
+}
+
+.playlist::-webkit-scrollbar-track {
+    background-color: gray;
+}
+
+.playlist::-webkit-scrollbar-thumb {
+    background-color: gray;
+}
+.playlist{
+    overflow-x: hidden;
+}
