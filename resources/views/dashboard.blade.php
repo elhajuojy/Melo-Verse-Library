@@ -12,5 +12,6 @@
                 <x-songs-grid :songs="$songs"/>
             </div>
         </div>
+        <x-flash/>
     </div>
 </x-app-layout>

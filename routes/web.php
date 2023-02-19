@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\PlaylistController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Middleware\EnsurePlaylistValidForThisUser;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,12 +33,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get("/playlists/{playlist}",function (\App\Models\Playlist $playlist){
-            $playlistSongs = $playlist->songs;
-            return view("playlist",[
-                "playlist"=>$playlist
-            ]);
-    });
+    Route::get("/playlists/{playlist}",[PlaylistController::class,"show"])->middleware(EnsurePlaylistValidForThisUser::class);
 });
 
 
