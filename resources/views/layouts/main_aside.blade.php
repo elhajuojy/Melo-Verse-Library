@@ -1,4 +1,4 @@
-<aside class="w-56 grid justify-center fixed bg-gray-900 h-screen border border-gray-700 text-white">
+<aside class="w-56 grid justify-center fixed bg-spPrimary-500 h-screen border border-gray-700 text-white">
 
     <div class="h-56 aside-header my-6  grid content-around">
         <a href="/home">
@@ -31,16 +31,15 @@
            </div>
        </a>
         <a href="#">
-            <div class="home flex gap-6">
+            <div class="home flex gap-6 ">
                 <i class="fa-solid fa-square-plus"></i>
                 <p>Create Playlist</p>
             </div>
         </a>
-    </div>
-    <div class="border border-gray-800 w-full mb-6">
 
+    <hr class="text-gray-50 opacity-25">
     </div>
-    <div class="home  h-full fixed relative overflow-auto playlist">
+    <div class="home  h-full mt-6 fixed relative overflow-auto playlist">
         <div class="w-full grid justify-left gap-6 mx-2 ">
             <x-list-genre/>
         </div>

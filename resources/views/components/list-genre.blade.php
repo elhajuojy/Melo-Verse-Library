@@ -1,6 +1,8 @@
-<div class="music-genre">
-    <h2>Pop</h2>
-</div>
+@foreach( Auth::user()->playlists as $playlist)
+    <div class="music-genre" id="item-{{ $playlist->id }}">
+        <a href="playlists/{{ $playlist->id }}">{{  $playlist->name }}</a>
+    </div>
+@endforeach
 
 <div class="music-genre">
     <h2>Rock</h2>

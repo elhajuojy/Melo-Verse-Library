@@ -14,18 +14,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get("/",function (){
+    return view("welcome");
 });
 
 Route::get('/home', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    $albums = \App\Models\Album::all();
+    $songs = \App\Models\Song::all();
+    return view('dashboard',[
+        "albums"=>$albums,
+        "songs"=>$songs
+    ]);
+})->middleware(["auth"])->name("home");
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get("/playlists/{playlist}",function (\App\Models\Playlist $playlist){
+            $playlistSongs = $playlist->songs;
+            return view("playlist",[
+                "playlist"=>$playlist
+            ]);
+    });
 });
+
+
 
 require __DIR__.'/auth.php';
