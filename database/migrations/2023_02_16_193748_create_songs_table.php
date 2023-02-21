@@ -21,7 +21,7 @@ return new class extends Migration
             $table->time("duration");
             $table->unsignedBigInteger("album_id");
             $table->unsignedBigInteger("artist_id");
-            $table->string("lyrics");
+            $table->text("lyrics");
             $table->string("cover");
             $table->timestamps();
 
