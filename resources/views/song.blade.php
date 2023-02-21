@@ -45,10 +45,11 @@
                 <div>
                     <img class="w-14 rounded-full" src="{{ Auth::user()->avatar_path  }}" alt="{{ Auth::user()->username }}">
                 </div>
-                <div class="flex flex-1">
-                    <input placeholder="Add a comment" class="bg-spPrimary-400 w-full px-4 py-2 text-gray-200 outline-0">
-                    <button class="hover:text-spPrimary-200 hover:bg-spGreen py-2 px-4 rounded bg-spPrimary-400 text-spGreen transition font-bold ease-in">Add </button>
-                </div>
+               <form class="flex flex-1" method="POST" action="/songs/{{ $song->id }}/comments">
+                   @csrf
+                       <input name="body" placeholder="Add a comment" class="bg-spPrimary-400 w-full px-4 py-2 text-gray-200 outline-0">
+                       <button class="hover:text-spPrimary-200 hover:bg-spGreen py-2 px-4 rounded bg-spPrimary-400 text-spGreen transition font-bold ease-in">Add </button>
+               </form>
             </div>
             <hr>
             <div class="song-comments mt-10 text-white">
