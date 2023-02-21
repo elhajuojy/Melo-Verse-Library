@@ -2,7 +2,11 @@
 
 use App\Http\Controllers\PlaylistController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SearchController;
+use App\Http\Controllers\SongController;
 use App\Http\Middleware\EnsurePlaylistValidForThisUser;
+use App\Models\Album;
+use App\Models\Song;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,11 +25,9 @@ Route::get("/",function (){
 });
 
 Route::get('/home', function () {
-    $albums = \App\Models\Album::all();
-    $songs = \App\Models\Song::all();
     return view('dashboard',[
-        "albums"=>$albums,
-        "songs"=>$songs
+        "albums"=> Album::all(),
+        "songs"=> Song::all()
     ]);
 })->middleware(["auth"])->name("home");
 
@@ -33,7 +35,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get("/playlists/{playlist}",[PlaylistController::class,"show"])->middleware(EnsurePlaylistValidForThisUser::class);
+    Route::get("/playlists/{playlist}",[PlaylistController::class,"show"]);
+    Route::get("/songs/{song}",[SongController::class,"show"]);
+    Route::get("/playlist/create",[PlaylistController::class,"create"])->name("playlist.create");
+    Route::get("/search",[SearchController::class,"index"])->name("search.index");
 });
 
 

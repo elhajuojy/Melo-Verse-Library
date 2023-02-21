@@ -1,4 +1,9 @@
-@foreach( Auth::user()->playlists as $playlist)
+@php
+
+$playlists = Auth::user()->playlists->sortByDesc("created_at");
+@endphp
+
+ @foreach($playlists  as $playlist)
     <div class="music-genre" id="item-{{ $playlist->id }}">
         <a href="/playlists/{{ $playlist->id }}">{{  $playlist->name }}</a>
     </div>

@@ -6,3 +6,4 @@
         <p> {{ session("message") }}</p>
     </div>
 @endif
+

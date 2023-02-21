@@ -7,7 +7,7 @@
                 <p>Home</p>
             </div>
         </a>
-        <a href="#">
+        <a href="{{ route("search.index") }}">
 
             <div class="home flex gap-6">
                 <i class="fa-solid fa-magnifying-glass"></i>
@@ -30,7 +30,7 @@
                <p>Liked Songs</p>
            </div>
        </a>
-        <a href="#">
+        <a href="/playlist/create">
             <div class="home flex gap-6 ">
                 <i class="fa-solid fa-square-plus"></i>
                 <p>Create Playlist</p>
