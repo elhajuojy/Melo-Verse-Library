@@ -43,7 +43,7 @@
         <section class="comments">
             <div class="comment-zone mb-6 flex gap-6 mt-6">
                 <div>
-                    <img class="w-14 rounded-full" src="{{ Auth::user()->avatar_path  }}" alt="{{ Auth::user()->username }}">
+                    <img class="w-12 rounded-full" src="{{ Auth::user()->avatar_path  }}" alt="{{ Auth::user()->username }}">
                 </div>
                <form class="flex flex-1" method="POST" action="/songs/{{ $song->id }}/comments">
                    @csrf
