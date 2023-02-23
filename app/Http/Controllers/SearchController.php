@@ -15,6 +15,9 @@ class SearchController extends Controller
     public function index()
     {
         //
+        if(\request('search')){
+            dd(\request()->body);
+        }
         $genres = Genre::all();
          return view("search",[
              "geners"=>$genres
