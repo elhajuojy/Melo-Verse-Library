@@ -7,16 +7,30 @@
                     <div>
                         <i class="fa-regular fa-magnifying-glass"></i>
                     </div>
-                    <input placeholder="What do you want to listen to ? " class="w-full border-none outline-0" id="search">
+                    <input name="search" placeholder="What do you want to listen to ? " class="w-full border-none outline-0" id="search">
                 </div>
             </form>
         </div>
         <div class="mt-16">
+            <div class="search-songs flex gap-4  text-spGreen overflow-x-auto  w-full">
+                @foreach($songs as $song)
+                    <div class="song aspect-square w-min-[15%] mb-6 h-32 aspect-square">
+                        <a href="/songs/{{ $song->id }}">
+                            <div>
+                                <img src="{{ $song->cover }}" class="w-[80%]">
+                            </div>
+                            <p class="mt-4 text-xs">
+                                {{ $song->title }}
+                            </p>
+                        </a>
+                    </div>
+                @endforeach
+            </div>
             <div class="over-view mb-6 on songs text-3xl text-white">
                 <h1> Recent searches </h1>
             </div>
             <div class="browse-all flex gap-6 flex-wrap m-auto  ">
-                @foreach($geners as $gener)
+                @foreach($genres as $gener)
                     <a href="/genres/{{ $gener->id }}">
                         <div class="cards min-w-[150px] min-h-[150px] max-w-[150px] rounded px-2 p-4 font-bold text-xl " style=" background-color: {{ fake()->hexColor() }}" id="{{ $gener->id }}">
                             {{ $gener->name }}
