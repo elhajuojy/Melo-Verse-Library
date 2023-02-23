@@ -36,13 +36,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get("/playlists/{playlist}",[PlaylistController::class,"show"])->name("playlist.show");
-    Route::patch("/playlists/{playlist}",[PlaylistController::class,"update"])->name("playlist.update");
-    Route::get("/songs/{song}",[SongController::class,"show"]);
-    Route::get("/playlist/create",[PlaylistController::class,"create"])->name("playlist.create");
-    Route::get("/playlist/create",[PlaylistController::class,"create"])->name("playlist.create");
     Route::get("/search",[SearchController::class,"index"])->name("search.index");
-    Route::post("/songs/{song}/comments",[CommentController::class,"store"])->name("comment.store");
+    require  __DIR__.'/playlist.php';
+    require  __DIR__."/song.php";
 });
 
 
