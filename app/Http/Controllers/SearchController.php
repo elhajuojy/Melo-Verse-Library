@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Genre;
+use App\Models\Song;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -14,13 +15,11 @@ class SearchController extends Controller
      */
     public function index()
     {
-        //
-        if(\request('search')){
-            dd(\request()->body);
-        }
+
         $genres = Genre::all();
          return view("search",[
-             "geners"=>$genres
+             "genres"=>$genres,
+             "songs"=>$this->getSongs()
          ]);
     }
 
@@ -30,6 +29,16 @@ class SearchController extends Controller
     public function create(): Response
     {
         //
+    }
+
+    public function getSongs(){
+        $songs = Song::latest();
+        if (\request('search')){
+            $songs->where("title",'like','%'.\request("search")."%")
+            ->orWhere("title",'like','%'.\request("search")."%");
+        }
+
+        return $songs->get();
     }
 
     /**

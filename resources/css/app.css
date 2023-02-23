@@ -17,3 +17,15 @@
 .playlist{
     overflow-x: hidden;
 }
+
+
+.search-songs::-webkit-scrollbar {
+    width: 3px;
+}
+.search-songs::-webkit-scrollbar-track {
+    background-color: gray;
+}
+
+.search-songs::-webkit-scrollbar-thumb {
+    background-color: gray;
+}
