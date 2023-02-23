@@ -64,22 +64,25 @@
                      </div>
                  </div>
                  <div class="mt-6 ">
-                     <form class="">
+                     <form class="" action="{{ route("playlist.update" , $playlist) }}" method="post">
+                         @csrf
+                         @method('patch')
                          <div class="flex gap-2">
                              <div class="bg-spPrimary-400 w-[50%] cursor-pointer grid place-content-center  rounded h-42">
                                  <i class="fa-solid fa-music"></i>
                                  <input type="file" class="hidden" name="image">
                              </div>
                              <div class="inputs here  ">
-                                 <input name="name" id="name" placeholder="{{ $playlist->name }}" class="bg-spPrimary-400 rounded w-full px-4 py-2" />
-                                 <input name="name" id="name" placeholder="playlist name here" class="bg-spPrimary-400 mt-2 h-32 rounded w-full px-4 py-2" />
+                                 <input name="name" id="name" placeholder="{{ $playlist->name }}" value="{{ $playlist->name }}" required class="bg-spPrimary-400 rounded w-full px-4 py-2" />
+                                 <input name="description" id="description" placeholder="playlist name here" class="bg-spPrimary-400 mt-2 h-32 rounded w-full px-4 py-2" />
                              </div>
                          </div>
-                         <button class="mt-6 ml-auto w-full text-xl bg-spGreen rounded text-spPrimary-200 px-4 py-2 font-bold mb-6">Save</button>
+                         <button type="submit" class="mt-6 ml-auto w-full text-xl bg-spGreen rounded text-spPrimary-200 px-4 py-2 font-bold mb-6">Save</button>
                      </form>
                  </div>
              </div>
          </div>
      </div>
+    <x-flash/>
 
 </x-app-layout>

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Playlist;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class PlaylistController extends Controller
 {
@@ -16,10 +18,24 @@ class PlaylistController extends Controller
         }
 
         return view("playlist",[
-            "playlist"=>$playlist
+            "playlist"=>$playlist,
+            "script"=>"resources/js/playlist.js"
         ]);
 
 
+    }
+    public function update( Request $request,$playlist){
+        $playlistName = $request->input('name');
+
+        $request->validate([
+            'name' => ['required', 'string', 'max:30'],
+
+        ]);
+
+        $play = Playlist::find($playlist);
+        $play->name= $playlistName;
+        $play->save();
+        return Redirect::route('playlist.show',$playlist)->with('message', 'playlist updated');
     }
 
     public  function create(){
