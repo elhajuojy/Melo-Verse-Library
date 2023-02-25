@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Playlist;
+use App\Models\Song;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -47,6 +48,15 @@ class PlaylistController extends Controller
         $newPlaylist->cover = fake()->imageUrl;
         $newPlaylist->save();
         return redirect("/home")->with("message","your playlist have been Created successfully ");
+    }
+
+    public function addSong(Request $request, Playlist $playlist,Song $song){
+
+        $playlist = Playlist::find(\request("playlist_id"));
+        $song = Song::find(\request("song_id"));
+        $playlist->songs()->attach($song);
+
+        return redirect("/playlists/".\request("playlist_id"))->with("message","song added to playlist successfully");
     }
 
 }
