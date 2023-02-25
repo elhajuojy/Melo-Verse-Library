@@ -12,7 +12,7 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-
+        @stack('meta')
 
 
         <!-- Scripts -->
@@ -44,5 +44,8 @@
             </main>
 
         </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+        <script src="{{ asset('js/share.js') }}"></script>
     </body>
 </html>
