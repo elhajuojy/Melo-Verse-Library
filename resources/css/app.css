@@ -29,3 +29,12 @@
 .search-songs::-webkit-scrollbar-thumb {
     background-color: gray;
 }
+
+#social-links ul{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
