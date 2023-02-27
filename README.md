@@ -2,6 +2,21 @@
 
 MeloVerse is an online music library application that allows users to search and listen to music, add tracks to their playlists, and leave comments and ratings. Admin users have the ability to add, archive, and modify music tracks, as well as manage user comments.
 
+## ScreenShoots 
+
+
+![Screenshot 2023-02-27 at 20 52 47](https://user-images.githubusercontent.com/86893073/221669362-e2c5e8e7-48da-4b46-9710-c06237c5c232.png)
+
+![Screenshot 2023-02-27 at 20 52 55](https://user-images.githubusercontent.com/86893073/221669432-bc461e51-c77f-4816-a067-14320d3bafc9.png)
+![Screenshot 2023-02-27 at 20 53 04](https://user-images.githubusercontent.com/86893073/221669439-301416a5-12f1-420e-b2c7-1373c3046607.png)
+
+
+![Screenshot 2023-02-27 at 20 53 45](https://user-images.githubusercontent.com/86893073/221669444-02a1627f-3f54-4cf2-8902-1c48e60c750b.png)
+![Screenshot 2023-02-27 at 20 54 19](https://user-images.githubusercontent.com/86893073/221669448-1a151695-2ba6-42a0-8329-b8045648a6a0.png)
+![Screenshot 2023-02-27 at 20 54 34](https://user-images.githubusercontent.com/86893073/221669452-23c2692d-f3a0-4e5e-b27f-bae253ed8e27.png)
+![Screenshot 2023-02-27 at 20 54 48](https://user-images.githubusercontent.com/86893073/221669459-b1531132-b6de-40fa-908e-3cc42031e6bb.png)
+
+
 ## Features
 
 - User authentication system with two roles (client and admin)
