@@ -3,15 +3,20 @@
         <div class="start cursor-pointer ">
             <i class="fa-duotone fa-play fa-2x" ></i>
         </div>
-        <div class="like cursor-pointer">
-            <i class="fa-regular fa-heart  fa-lg"></i>
-        </div>
         <div class="download cursor-pointer">
             <i class="fa-solid fa-circle-down fa-lg"></i>
         </div>
-        <div class="share cursor-pointer">
-            <i class="fa-solid fa-share fa-lg"></i>
+
+        @php
+        $songRating = \App\Models\Rate::where("song_id", $song->id)->where("user_id", Auth::user()->id)->first() ;
+        @endphp
+
+        <div class="detect-hover">
+            <sl-rating label="Rating" value="{{ $songRating->rate ?? 0 }}"></sl-rating>
+            <input id="rate_song" value="{{ $song->id }}" type="hidden">
+            <input id="user_rating" value="{{ Auth::user()->id }}" type="hidden">
         </div>
+
         <div x-data="{open:false}" class="more cursor-pointer z-50 ">
             <div  @click="open = !open" ><i class="fa-thin fa-ellipsis-stroke fa-lg"></i></div>
             <div x-show="open">

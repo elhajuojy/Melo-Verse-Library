@@ -5,7 +5,9 @@
         <a href="/songs/{{ $song->id }}">
             <div class="album-card" id="{{ $song->id }}">
                 <div class="album-img">
-                    <img src="{{ $song->cover }}" class="max-h-56 min-w-[200px] h-32 object-cover">
+
+                    {{--                    <img src="{{ asset("storage/".$song->cover) }}" class="max-h-56 min-w-[200px] h-32 object-cover">--}}
+                    <img src="{{ asset($song->cover) }}" class="max-h-56 min-w-[200px] h-32 object-cover">
                 </div>
                 <div class="flex mt-4 justify-between w-full">
                     <p>

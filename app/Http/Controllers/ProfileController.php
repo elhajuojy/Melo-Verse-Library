@@ -57,4 +57,9 @@ class ProfileController extends Controller
 
         return Redirect::to('/');
     }
+
+    public function adminDashboard()
+    {
+        return view('dashboard',);
+    }
 }

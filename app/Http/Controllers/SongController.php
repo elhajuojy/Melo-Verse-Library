@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
+use App\Models\Rate;
 use App\Models\Song;
 use Illuminate\Http\Request;
 use Jorenvh\Share\Share;
@@ -26,5 +27,21 @@ class SongController extends Controller
             "share"=>$share,
 
         ]);
+    }
+
+    public function StoreRate(){
+//        TODO : check if user already rated this song
+        Rate::where("user_id",auth()->user()->id)->where("song_id",request()->input("song_id"))->delete();
+
+
+        Rate::create([
+            "user_id"=>auth()->user()->id,
+            "song_id"=>request()->input("song_id"),
+            "rate"=>request()->input("rating")
+        ]);
+        return json_decode("success");
+    }
+    public function rates(){
+        return view("rates");
     }
 }

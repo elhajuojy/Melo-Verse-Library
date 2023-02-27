@@ -22,4 +22,10 @@ class Song extends Model
     public function comments(){
         return $this->hasMany(Comment::class);
     }
+
+    public function artist(){
+        return $this->belongsTo(Artist::class);
+    }
+
+
 }

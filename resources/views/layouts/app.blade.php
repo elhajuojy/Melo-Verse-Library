@@ -18,9 +18,12 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js',
                 'resources/css/all.css',
-                'resources/css/all.min.css'
+                'resources/css/all.min.css',
+                "resources/js/song.js"
         ])
 
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.1.0/dist/themes/light.css" />
+        <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.1.0/dist/shoelace.js"></script>
 
     </head>
     <body class="font-sans antialiased bg-spPrimary-500 flex">
