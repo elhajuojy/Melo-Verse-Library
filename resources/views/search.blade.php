@@ -12,9 +12,9 @@
             </form>
         </div>
         <div class="mt-16">
-            <div class="search-songs flex gap-4  text-spGreen overflow-x-auto  w-full">
+            <div class="scroll-bar flex gap-4  text-spGreen overflow-x-auto  w-full">
                 @foreach($songs as $song)
-                    <div class="song aspect-square w-min-[15%] mb-6 h-32 aspect-square">
+                    <div class="song my-3 aspect-square w-min-[15%] mb-6 h-32 aspect-square">
                         <a href="/songs/{{ $song->id }}">
                             <div>
                                 <img src="{{ $song->cover }}" class="w-[80%]">

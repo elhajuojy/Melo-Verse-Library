@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\PlaylistController;
 use App\Http\Controllers\ProfileController;
@@ -33,10 +34,16 @@ Route::get('/home', function () {
 })->middleware(["auth"])->name("home");
 
 Route::middleware('auth')->group(function () {
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
     Route::get("/search",[SearchController::class,"index"])->name("search.index");
+
+    Route::get("/admin",[AdminController::class,"index"])->name("admin")->middleware("admin");
+    Route::post("/admin/songs",[AdminController::class,"store"])->name("admin.songs")->middleware("admin");
+
     require  __DIR__.'/playlist.php';
     require  __DIR__."/song.php";
 });

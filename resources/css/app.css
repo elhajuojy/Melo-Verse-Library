@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 
+:root{
+    --spSecondary:#65210A;
+    --spBrown : #9B5B5C;
+    --spGreen : #00ED5D;
+}
+
 .playlist::-webkit-scrollbar {
     width: 0px;
 }
@@ -38,3 +44,18 @@
     margin-top: 10px;
 }
 
+.scroll-bar::-webkit-scrollbar {
+    height: 8px;
+}
+.scroll-bar::-webkit-scrollbar-track {
+    border-radius: 5px;
+    margin: 0 10px;
+}
+.scroll-bar::-webkit-scrollbar-thumb {
+    background-color: var(--spGreen);
+    border-radius: 5px;
+    margin: 0 10px;
+}
+.scroll-bar::-webkit-scrollbar-thumb:hover {
+    background-color: var(--spGreen);
+}

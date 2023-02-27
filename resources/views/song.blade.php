@@ -7,11 +7,9 @@
         <meta property="og:site_name" content="MeloVerse">
         <meta property="og:locale" content="en_US">
         <meta property="og:locale:alternate" content="fr_FR">
-
-
     @endpush
-    <main class="main w-[95%] mb-6 m-auto w-[95%] ">
 
+    <main class="main w-[95%] mb-6 m-auto w-[95%] ">
 
         <x-song.cover :song="$song" />
 
@@ -24,7 +22,6 @@
         </div>
 
         <x-song.comments :song="$song"/>
-
 
     </main>
 
