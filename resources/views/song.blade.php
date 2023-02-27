@@ -13,6 +13,16 @@
 
         <x-song.cover :song="$song" />
 
+        <div class="mt-6">
+        </div>
+
+        <div class="audio-player bg-transparent  p-4 rounded-lg">
+            <audio class="w-full bg-transparent rounded-lg shadow-md" controls>
+                <source class="bg-black" src="{{ asset("storage/".$song->audio_path) }}" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
 
         <x-song.actions :song="$song" />
         <x-song.lyrics :song="$song" />

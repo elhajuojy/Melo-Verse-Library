@@ -40,7 +40,7 @@ class AdminController extends Controller
 
         Song::create($attributes);
 
-        return redirect()->back();
+        return redirect()->back()->with("success","Song added successfully");
 
     }
 }

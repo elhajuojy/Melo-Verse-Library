@@ -57,4 +57,5 @@
 
         </form>
     </section>
+    <x-flash/>
 </x-app-layout>

@@ -44,6 +44,9 @@ Route::middleware('auth')->group(function () {
     Route::get("/admin",[AdminController::class,"index"])->name("admin")->middleware("admin");
     Route::post("/admin/songs",[AdminController::class,"store"])->name("admin.songs")->middleware("admin");
 
+    Route::post("/ratings",[SongController::class,"StoreRate"])->name("ratings.store");
+    Route::get("/ratings",[SongController::class,"rates"])->name("ratings.store");
+
     require  __DIR__.'/playlist.php';
     require  __DIR__."/song.php";
 });
