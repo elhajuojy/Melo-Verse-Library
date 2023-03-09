@@ -17,19 +17,23 @@ return new class extends Migration
             $table->longText("body");
             $table->unsignedBigInteger('user_id')->nullable(false);
             $table->unsignedBigInteger('song_id')->nullable(false);
-
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign("song_id")->references("id")->on("songs")->onDelete("cascade")->onUpdate("cascade");
-
-
         });
+
+
+
+
+
     }
 
     /**
      * Reverse the migrations.
      */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('comments');
+
+
     }
 };
