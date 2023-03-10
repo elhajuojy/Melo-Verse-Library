@@ -18,9 +18,12 @@
     </header>
     <main>
 
-        <div class="container m-auto mt-6">
+        <div class="container m-auto my-6">
         <h1 class="text-2xl mb-6 font-bold dark:text-white overflow-hidden shadow-sm sm:rounded-lg">Manage Comments</h1>
+        <div class="mb-6">
         <x-comment-list :comments="$comments"/>
+        </div>
+        {{ $comments->links() }}
         </div>
     </main>
 

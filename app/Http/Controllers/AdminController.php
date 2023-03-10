@@ -47,7 +47,7 @@ class AdminController extends Controller
 
     public function comments(){
         return view("admin.comments",[
-            "comments"=>\App\Models\Comment::latest('created_at')->get()
+            "comments"=>\App\Models\Comment::latest('created_at')->paginate(5),
         ]);
     }
 
