@@ -1,4 +1,4 @@
-<aside class="w-56 grid justify-center fixed bg-spPrimary-500 h-screen border border-gray-700 text-white">
+<aside class="w-52 grid justify-center fixed bg-spPrimary-500 h-screen border border-gray-700 text-white">
 
     <div class="h-56 aside-header my-6  grid content-around">
         <a href="/home">
@@ -40,7 +40,7 @@
     <hr class="text-gray-50 opacity-25">
     </div>
     <div class="home  h-full mt-6 fixed relative overflow-auto playlist">
-        <div class="w-full grid justify-left gap-6 mx-2 ">
+        <div class="w-full grid justify-left gap-3  ">
             <x-list-genre/>
         </div>
     </div>
