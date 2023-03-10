@@ -46,11 +46,28 @@ class AdminController extends Controller
     }
 
     public function comments(){
-        return view("admin.comments");
+        return view("admin.comments",[
+            "comments"=>\App\Models\Comment::latest('created_at')->get()
+        ]);
     }
 
     public function songs(){
-        return view("admin.songs.index");
+        return view("admin.songs.index",);
     }
+
+    public function archiveComment(\App\Models\Comment $comment){
+        $comment->update([
+            "archived"=>true
+        ]);
+        return redirect()->back()->with("success","Comment archived successfully");
+    }
+
+    public function unArchiveComment(\App\Models\Comment $comment){
+        $comment->update([
+            "archived"=>false
+        ]);
+        return redirect()->back()->with("success","Comment unarchived successfully");
+    }
+
 
 }

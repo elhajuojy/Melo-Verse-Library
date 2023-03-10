@@ -30,7 +30,7 @@ class SongController extends Controller
     }
 
     public function StoreRate(){
-//        TODO : check if user already rated this song
+//        TODO : check if user already rated this song and remove te old rate
         Rate::where("user_id",auth()->user()->id)->where("song_id",request()->input("song_id"))->delete();
 
 

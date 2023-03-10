@@ -13,6 +13,7 @@
     <hr>
     <div class="song-comments mt-10 text-white">
         @foreach($song->comments as $comment)
+            @if($comment->archived == false )
             <div class="flex gap-6 items-center mt-6">
                 <div  class="">
                     <img class="w-10 aspect-square  object-cover rounded-full" src="{{ $comment->user->avatar_path }}" alt="{{ $comment->user->avatar_path }}">
@@ -25,6 +26,7 @@
                     {{ $comment->body }}
                 </div>
             </div>
+            @endif
         @endforeach
     </div>
 </section>

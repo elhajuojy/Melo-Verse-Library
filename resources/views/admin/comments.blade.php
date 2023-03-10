@@ -16,6 +16,15 @@
             <a href="/admin/comments">Manage Comments </a>
         </div>
     </header>
+    <main>
+
+        <div class="container m-auto mt-6">
+        <h1 class="text-2xl mb-6 font-bold dark:text-white overflow-hidden shadow-sm sm:rounded-lg">Manage Comments</h1>
+        <x-comment-list :comments="$comments"/>
+        </div>
+    </main>
+
+    <x-flash />
 
 </x-app-layout>
 
