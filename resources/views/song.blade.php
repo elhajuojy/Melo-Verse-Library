@@ -9,7 +9,7 @@
         <meta property="og:locale:alternate" content="fr_FR">
     @endpush
 
-    <main class="main w-[95%] mb-6 m-auto w-[95%] ">
+    <main class="main w-[95%] mb-6 m-auto  ">
 
         <x-song.cover :song="$song" />
 

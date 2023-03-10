@@ -11,8 +11,9 @@ class AdminController extends Controller
     //
 
     public function index(){
-        return view("admin");
+        return view("admin.index");
     }
+
 
     public function  store(){
 
@@ -43,4 +44,13 @@ class AdminController extends Controller
         return redirect()->back()->with("success","Song added successfully");
 
     }
+
+    public function comments(){
+        return view("admin.comments");
+    }
+
+    public function songs(){
+        return view("admin.songs.index");
+    }
+
 }
