@@ -10,6 +10,7 @@ use App\Http\Middleware\EnsurePlaylistValidForThisUser;
 use App\Models\Album;
 use App\Models\Song;
 use Illuminate\Support\Facades\Route;
+use App\Models\Artist;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,8 +24,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get("/",function (){
-    return view("welcome");
+    return view("welcome",[
+        "albums"=> Album::all(),
+        "songs"=> Song::all(),
+        "artists"=> Artist::all(),
+    ]
+    );
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard',[
+        "albums"=> Album::all(),
+        "songs"=> Song::all()
+    ]);
+})->middleware(["auth"])->name("home");
 
 Route::get('/home', function () {
     return view('dashboard',[
@@ -32,6 +45,8 @@ Route::get('/home', function () {
         "songs"=> Song::all()
     ]);
 })->middleware(["auth"])->name("home");
+
+
 
 Route::middleware('auth')->group(function () {
 
@@ -41,14 +56,16 @@ Route::middleware('auth')->group(function () {
 
     Route::get("/search",[SearchController::class,"index"])->name("search.index");
 
-    Route::get("/admin",[AdminController::class,"index"])->name("admin")->middleware("admin");
-    Route::post("/admin/songs",[AdminController::class,"store"])->name("admin.songs")->middleware("admin");
+
+
+
 
     Route::post("/ratings",[SongController::class,"StoreRate"])->name("ratings.store");
     Route::get("/ratings",[SongController::class,"rates"])->name("ratings.store");
 
     require  __DIR__.'/playlist.php';
     require  __DIR__."/song.php";
+    require  __DIR__."/admin.php";
 });
 
 
