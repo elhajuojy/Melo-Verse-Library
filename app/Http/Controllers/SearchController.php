@@ -19,7 +19,6 @@ class SearchController extends Controller
         $genres = Genre::all();
          return view("search",[
              "genres"=>$genres,
-             "songs"=>$this->getSongs()
          ]);
     }
 
@@ -31,15 +30,6 @@ class SearchController extends Controller
         //
     }
 
-    public function getSongs(){
-        $songs = Song::latest();
-        if (\request('search')){
-            $songs->where("title",'like','%'.\request("search")."%")
-            ->orWhere("title",'like','%'.\request("search")."%");
-        }
-
-        return $songs->get();
-    }
 
     /**
      * Store a newly created resource in storage.

@@ -22,6 +22,7 @@
                 "resources/js/song.js"
         ])
 
+        @livewireStyles
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.1.0/dist/themes/light.css" />
         <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.1.0/dist/shoelace.js"></script>
 
@@ -47,8 +48,8 @@
             </main>
 
         </div>
-
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
         <script src="{{ asset('js/share.js') }}"></script>
+        @livewireScripts
     </body>
 </html>
