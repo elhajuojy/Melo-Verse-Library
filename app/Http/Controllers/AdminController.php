@@ -11,7 +11,9 @@ class AdminController extends Controller
     //
 
     public function index(){
-        return view("admin.index");
+        return view("admin.index",[
+
+        ]);
     }
 
 
@@ -44,6 +46,12 @@ class AdminController extends Controller
         return redirect()->back()->with("success","Song added successfully");
 
     }
+    public function create(){
+        return view("admin.songs.create",[
+            "artists"=>\App\Models\Artist::all(),
+        ]);
+    }
+
 
     public function comments(){
         return view("admin.comments",[
@@ -52,7 +60,9 @@ class AdminController extends Controller
     }
 
     public function songs(){
-        return view("admin.songs.index",);
+        return view("admin.songs.songs",[
+            "songs"=>\App\Models\Song::latest('created_at')->paginate(5),
+        ]);
     }
 
     public function archiveComment(\App\Models\Comment $comment){
@@ -68,6 +78,21 @@ class AdminController extends Controller
         ]);
         return redirect()->back()->with("success","Comment unarchived successfully");
     }
+
+    public function archiveSong(\App\Models\Song $song){
+        $song->update([
+            "archived"=>true
+        ]);
+        return redirect()->back()->with("success","Song archived successfully");
+    }
+
+    public function unArchiveSong(\App\Models\Song $song){
+        $song->update([
+            "archived"=>false
+        ]);
+        return redirect()->back()->with("success","Song unarchived successfully");
+    }
+
 
 
 }

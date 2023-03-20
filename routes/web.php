@@ -35,14 +35,14 @@ Route::get("/",function (){
 Route::get('/dashboard', function () {
     return view('dashboard',[
         "albums"=> Album::all(),
-        "songs"=> Song::all()
+        "songs"=> Song::all()->where("archived",false)
     ]);
 })->middleware(["auth"])->name("home");
 
 Route::get('/home', function () {
     return view('dashboard',[
         "albums"=> Album::all(),
-        "songs"=> Song::all()
+        "songs"=> Song::all()->where("archived",false)
     ]);
 })->middleware(["auth"])->name("home");
 
