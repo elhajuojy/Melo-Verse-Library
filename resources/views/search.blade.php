@@ -1,6 +1,6 @@
 <x-app-layout>
     <main class="lg:w-[90%] w-[95%] m-auto mt-6">
-            <div>
+            <div class=". max-w-7xl">
             <livewire:search-song/>
             </div>
 
