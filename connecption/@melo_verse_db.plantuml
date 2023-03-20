@@ -1,0 +1,147 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+class albums {
+   name: varchar(255)
+   cover: varchar(255)
+   duration: time
+   created_at: timestamp
+   updated_at: timestamp
+   id: bigint(20) unsigned
+}
+class artists {
+   name: varchar(255)
+   image: varchar(255)
+   country: varchar(255)
+   description: varchar(255)
+   is_band: tinyint(1)
+   created_at: timestamp
+   updated_at: timestamp
+   id: bigint(20) unsigned
+}
+class comments {
+   created_at: timestamp
+   updated_at: timestamp
+   body: longtext
+   user_id: bigint(20) unsigned
+   song_id: bigint(20) unsigned
+   archived: tinyint(1)
+   id: bigint(20) unsigned
+}
+class failed_jobs {
+   uuid: varchar(255)
+   connection: text
+   queue: text
+   payload: longtext
+   exception: longtext
+   failed_at: timestamp
+   id: bigint(20) unsigned
+}
+class genre_songs {
+   created_at: timestamp
+   updated_at: timestamp
+   song_id: bigint(20) unsigned
+   genre_id: bigint(20) unsigned
+   id: bigint(20) unsigned
+}
+class genres {
+   created_at: timestamp
+   updated_at: timestamp
+   name: varchar(255)
+   cover_path: varchar(255)
+   id: bigint(20) unsigned
+}
+class migrations {
+   migration: varchar(255)
+   batch: int(11)
+   id: int(10) unsigned
+}
+class password_reset_tokens {
+   token: varchar(255)
+   created_at: timestamp
+   email: varchar(255)
+}
+class personal_access_tokens {
+   tokenable_type: varchar(255)
+   tokenable_id: bigint(20) unsigned
+   name: varchar(255)
+   token: varchar(64)
+   abilities: text
+   last_used_at: timestamp
+   expires_at: timestamp
+   created_at: timestamp
+   updated_at: timestamp
+   id: bigint(20) unsigned
+}
+class playlist_songs {
+   playlist_id: bigint(20) unsigned
+   song_id: bigint(20) unsigned
+   created_at: timestamp
+   updated_at: timestamp
+   id: bigint(20) unsigned
+}
+class playlists {
+   name: varchar(255)
+   description: varchar(255)
+   cover: varchar(255)
+   cover_path: varchar(255)
+   user_id: bigint(20) unsigned
+   created_at: timestamp
+   updated_at: timestamp
+   id: bigint(20) unsigned
+}
+class rates {
+   rate: int(11)
+   user_id: bigint(20) unsigned
+   song_id: bigint(20) unsigned
+   created_at: timestamp
+   updated_at: timestamp
+   id: bigint(20) unsigned
+}
+class songs {
+   title: varchar(255)
+   year: int(11)
+   track: varchar(255)
+   audio_path: varchar(255)
+   filename: varchar(255)
+   duration: time
+   album_id: bigint(20) unsigned
+   artist_id: bigint(20) unsigned
+   lyrics: text
+   cover: varchar(255)
+   created_at: timestamp
+   updated_at: timestamp
+   id: bigint(20) unsigned
+}
+class users {
+   name: varchar(255)
+   email: varchar(255)
+   username: varchar(255)
+   avatar: varchar(255)
+   avatar_path: varchar(255)
+   bio: varchar(255)
+   location: varchar(255)
+   email_verified_at: timestamp
+   password: varchar(255)
+   is_admin: tinyint(1)
+   remember_token: varchar(100)
+   created_at: timestamp
+   updated_at: timestamp
+   id: bigint(20) unsigned
+}
+
+comments                -[#595959,plain]-^  songs                  : "song_id:id"
+comments                -[#595959,plain]-^  users                  : "user_id:id"
+genre_songs             -[#595959,plain]-^  genres                 : "genre_id:id"
+genre_songs             -[#595959,plain]-^  songs                  : "song_id:id"
+playlist_songs          -[#595959,plain]-^  playlists              : "playlist_id:id"
+playlist_songs          -[#595959,plain]-^  songs                  : "song_id:id"
+playlists               -[#595959,plain]-^  users                  : "user_id:id"
+rates                   -[#595959,plain]-^  songs                  : "song_id:id"
+rates                   -[#595959,plain]-^  users                  : "user_id:id"
+songs                   -[#595959,plain]-^  albums                 : "album_id:id"
+songs                   -[#595959,plain]-^  artists                : "artist_id:id"
+@enduml
