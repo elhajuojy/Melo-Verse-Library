@@ -17,8 +17,10 @@ Route::post("/admin/songs",[AdminController::class,"store"])->name("admin.songs"
 Route::get("/admin/songs",[AdminController::class,"songs"])->name("admin.songs")->middleware("admin");
 Route::get("/admin/songs/create",[AdminController::class,"create"])->name("admin.songs.create")->middleware("admin");
 Route::get("/admin/songs/{song}/edit",[AdminController::class,"edit"])->name("admin.songs.edit")->middleware("admin");
+Route::patch("/admin/songs/{song}",[AdminController::class,"update"])->name("admin.songs.update")->middleware("admin");
 Route::patch("/admin/songs/{song}/archive",[AdminController::class,"archiveSong"])->name("admin.songs.archive")->middleware("admin");
 Route::patch("/admin/songs/{song}/unarchive",[AdminController::class,"unArchiveSong"])->name("admin.songs.unarchive")->middleware("admin");
+
 
 
 

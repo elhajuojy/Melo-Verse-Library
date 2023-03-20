@@ -52,6 +52,52 @@ class AdminController extends Controller
         ]);
     }
 
+    public function update(Request $request,\App\Models\Song $song){
+
+        // dd($song);
+        $attributes =  \request()->validate([
+            "title"=>"required|min:3|max:255",
+            "artist_id"=>["required",Rule::exists("artists","id")],
+            "year"=>"required:numeric",
+            "audio_path"=>"required:mp3,mp4",
+            "cover"=>"required:jpg,png,jpeg",
+            "lyrics"=>"required"
+        ]);
+
+        if(\request()->hasFile("audio_path")){
+            $song_path = \request()->file("audio_path")->store("songs");
+            $attributes["audio_path"] = $song_path;
+        }
+        if(\request()->hasFile("cover")){
+            $cover_path = \request()->file("cover")->store("covers");
+            $attributes["cover"] = $cover_path;
+        }
+
+        $song = Song::find($song->id);
+        $song->title = $attributes["title"];
+        $song->artist_id = $attributes["artist_id"];
+        $song->year = $attributes["year"];
+        $song->audio_path = $attributes["audio_path"];
+        $song->cover = $attributes["cover"];
+        $song->lyrics = $attributes["lyrics"];
+        $song->save();
+
+        return redirect()->back()->with("success","Song updated successfully");
+
+
+
+
+    }
+
+    public function edit(\App\Models\Song $song){
+        return view("admin.songs.update",[
+            "song"=>$song,
+            "artists"=>\App\Models\Artist::all(),
+
+        ]);
+    }
+
+
 
     public function comments(){
         return view("admin.comments",[
