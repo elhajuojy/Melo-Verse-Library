@@ -7,6 +7,10 @@
             <div class="text-white">
                 <x-albums-grid :albums="$albums"/>
             </div>
+            <div class="mt-8 text-white">
+                <x-artists-grid :artists="$artists" />
+            </div>
+
             {{--songs overview --}}
             <div class=" mt-8 text-white">
                 <x-songs-grid :songs="$songs"/>

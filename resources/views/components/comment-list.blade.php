@@ -1,5 +1,5 @@
 @props(["comments"])
-<div class="flex flex-col divide-y ">
+<div class="flex  flex-col divide-y ">
     @foreach($comments as $comment)
         <div class="flex flex-col   p-4 rounded-lg shadow-lg">
             <div class="flex justify-between">
