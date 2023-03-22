@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ArtistController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\PlaylistController;
 use App\Http\Controllers\ProfileController;
@@ -35,16 +36,19 @@ Route::get("/",function (){
 Route::get('/dashboard', function () {
     return view('dashboard',[
         "albums"=> Album::all(),
-        "songs"=> Song::all()->where("archived",false)
+        "songs"=> Song::all()->where("archived",false),
+        "artists"=> Artist::all(),
     ]);
 })->middleware(["auth"])->name("home");
 
 Route::get('/home', function () {
     return view('dashboard',[
         "albums"=> Album::all(),
-        "songs"=> Song::all()->where("archived",false)
+        "songs"=> Song::all()->where("archived",false),
+        "artists"=> Artist::all(),
     ]);
 })->middleware(["auth"])->name("home");
+
 
 
 
@@ -56,8 +60,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get("/search",[SearchController::class,"index"])->name("search.index");
 
-
-
+    Route::get("/artists/{artist}",[ArtistController::class,"show"])->name("artists.show");
 
 
     Route::post("/ratings",[SongController::class,"StoreRate"])->name("ratings.store");
