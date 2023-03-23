@@ -18,6 +18,8 @@ class GenreSongFactory extends Factory
     {
         return [
             //
+            'genre_id' => fake()->numberBetween(1, 100),
+            'song_id' => fake()->numberBetween(1, 10),
         ];
     }
 }
