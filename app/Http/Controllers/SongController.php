@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
+use App\Models\Genre;
 use App\Models\Rate;
 use App\Models\Song;
 use Illuminate\Http\Request;
@@ -44,4 +45,12 @@ class SongController extends Controller
     public function rates(){
         return view("rates");
     }
+
+
+    public function genre(Genre $genre){
+        return view("genre",[
+            "genre"=>$genre
+        ]);
+    }
+
 }
