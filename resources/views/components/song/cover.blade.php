@@ -8,5 +8,7 @@
         <p>SINGLE </p>
         <h1 class="lg:text-4xl text-xl"> {{ $song->title }} </h1 >
         <p class="text-gray-400 "> {{ $song->year }} </p>
+        <p class="text-gray-400 "> {{ $song->artist->name }} </p>
+
     </div>
 </div>
