@@ -29,7 +29,7 @@
                     <tr>
                         <td class="border px-4 py-2">{{ $song->title }}</td>
                         <td class="border px-4 py-2">
-                            <img src="{{ asset($song->cover) }}" alt="" class="w-12  h-12">
+                            <img src="{{  asset("storage/".$song->cover) }}" alt="" class="w-12 object-cover  h-12">
                         </td>
                         <td class="border px-4 py-2">{{ $song->artist->name }}</td>
                         <td class="border px-4 py-2">{{ $song->album->name }}</td>
