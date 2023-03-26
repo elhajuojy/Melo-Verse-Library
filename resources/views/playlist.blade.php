@@ -35,7 +35,7 @@
 
                 <tr class="">
                     <td class="pb-3"> {{ $loop->index+1 }} </td>
-                    <td class="pb-3"> <a href="/songs/{{$song->id}}" class="hover:border-b cursor-pointer"> <img src="{{asset($song->cover) }}" class="w-10" alt=" {{ $song->title }}"> </a> </td>
+                    <td class="pb-3"> <a href="/songs/{{$song->id}}" class="hover:border-b cursor-pointer"> <img src="{{asset("storage/".$song->cover) }}" class="w-10" alt=" {{ $song->title }}"> </a> </td>
                     <td class="pb-3"> <a href="/songs/{{$song->id}}" class="hover:border-b cursor-pointer"> {{ $song->title }} </a> </td>
                     <td class="pb-3">
                         {{ $song->duration }}

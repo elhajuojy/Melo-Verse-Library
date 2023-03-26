@@ -16,7 +16,7 @@
     <div class="song my-6  aspect-square w-min-[15%] mb-6 h-32 ">
         <a href="/songs/{{ $song->id }}">
             <div>
-                <img src="{{ $song->cover }}" class="w-[80%]">
+                <img src="{{ asset("storage/".$song->cover) }}" class="w-[80%]">
             </div>
             <p class="my-4 text-xs">
                 {{ $song->title }}

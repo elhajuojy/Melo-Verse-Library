@@ -2,7 +2,7 @@
 <div
     class="header-playlist mt-6 gap-6 flex m-auto justify-end text-white">
     <div class="cover relative m-auto">
-        <img src="{{ asset($song->cover) }}"  class="max-w-[200px]" alt="{{ $song->title }}">
+        <img src="{{ asset("storage/".$song->cover) }}"  class="max-w-[200px]" alt="{{ $song->title }}">
     </div>
     <div class="description grid m-auto gap-6 flex-1">
         <p>SINGLE </p>
